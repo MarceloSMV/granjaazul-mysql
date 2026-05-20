@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #ffffff;
+}
+
+.espacio-superior {
+    height: 240px;
+}
+
+.seccion-delivery-horizontal {
+    width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Botón Superior */
+.btn-azul-carta {
+    display: inline-block;
+    background-color: #00336c;
+    color: white;
+    text-decoration: none;
+    padding: 15px 50px;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+/* Flor y Título */
+.bloque-decorativo {
+    margin: 40px 0;
+}
+
+.flor-delivery {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.titulo-como-pedir {
+    color: #00336c;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.fila-pedidos {
+    display: flex;
+    justify-content: center; 
+    gap: 20px;
+    padding-bottom: 80px;
+}
+
+.tarjeta-azul-pequena {
+    background-color: #00336c;
+    width: 180px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.metodo-texto {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn-pedir-blanco {
+    background-color: white;
+    color: #00336c;
+    text-decoration: none;
+    padding: 8px 35px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn-pedir-blanco:hover {
+    background-color: #f2f2f2;
+}
+
+.espacio-inferior {
+    height: 60px;
+}
+
+.info-horarios {
+    margin-top: 10px;
+    color: #00336c; 
+    line-height: 1.5;
+    padding-bottom: 50px;
+}
+
+.horario-titulo {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.horario-detalle {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.horario-nota {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.fila-pedidos {
+    padding-bottom: 40px; 
+}
+
+.contenedor-imagen-final {
+    display: flex;
+    justify-content: center; 
+
+}
+
+.imagen-comida-delivery {
+    width: 1700px;  
+    height: auto; 
+    display: block;
+}

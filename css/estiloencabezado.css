@@ -1,0 +1,92 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000
+	
+}
+
+.header-top {
+    background-color: rgb(0, 51, 108);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px 30px;
+    height: 140px;
+}
+
+.col-delivery, .col-logo, .col-reservas {
+    display: flex;
+    align-items: center;
+}
+
+.col-delivery { 
+	flex: 1; 
+	justify-content: flex-start; 
+}
+.col-logo { 
+	flex: 1; 
+	justify-content: center; 
+}
+.col-reservas { 
+	flex: 1; 
+	justify-content: flex-end; 
+	gap: 8px; 
+}
+
+
+#imglogo {
+    height: 80px; 
+    width: auto;
+}
+
+#botondelivery {
+    background-color: white;
+    color: rgb(0, 51, 108);
+    border: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    white-space: nowrap; 
+}
+
+.clasebotones {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 11px;
+    text-align: center;
+    cursor: pointer;
+    min-width: 90px;
+}
+
+#menu {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ccc;
+}
+
+#menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 60px;
+}
+
+.listamenu a {
+    text-decoration: none;
+    color: rgb(0, 51, 108);
+    font-weight: bold;
+    font-family: 'Bahnschrift Condensed', sans-serif;
+}

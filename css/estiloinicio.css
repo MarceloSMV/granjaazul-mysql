@@ -1,0 +1,123 @@
+#contenedorprincipal {
+    padding-top: 140px;
+    width: 100%;
+    height: auto; 
+    background-color: white;
+}
+
+#slider {
+    width: 100%;
+    height: 600px;
+    overflow: hidden; 
+}
+
+#slider img {
+    height: 600px;
+    object-fit: cover;
+}
+
+#locales { 
+    width: 70%;
+    max-width: 900px;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px; 
+}
+
+.fila-local {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.fila-invertida {
+    flex-direction: row-reverse; 
+}
+
+.col-imagen, .col-texto {
+    flex: 1;
+}
+
+.col-imagen img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.subtitulo-local {
+    color: #00336C;
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.titulo-manuscrito {
+    color: #00336C;
+    font-family: 'Brush Script MT', 'Dancing Script', cursive; 
+    font-size: 3.5rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.descripcion-local {
+    color: #444;
+    line-height: 1.6;
+    font-size: 1rem;
+    text-align: left;
+}
+
+#galeria {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    overflow: hidden;        
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.contenedor-galeria {
+    width: 1700px;
+    height: 400px; 
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    height: 100%; 
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;     
+    object-fit: cover; 
+    display: block;
+}
+
+.swiper-button-next, 
+.swiper-button-prev {
+    color: #00336C;          
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.swiper-button-next { right: 0; }
+.swiper-button-prev { left: left; }
+
+.swiper-button-next:hover, 
+.swiper-button-prev:hover {
+    background-color: #00336C;
+    color: #ffffff;
+}
