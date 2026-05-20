@@ -14,7 +14,7 @@
             </section>
             
             <section class="col-logo">
-                <a href="http://localhost:81/IDAT/granjaazul/">
+                <a href="http://localhost/IDAT/granjaazul-mysql/">
                     <img src="img/logo.avif" id="imglogo" alt="Logo">
                 </a>
             </section>
