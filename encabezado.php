@@ -1,3 +1,6 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,7 +17,7 @@
             </section>
             
             <section class="col-logo">
-                <a href="http://localhost/IDAT/granjaazul-mysql/">
+                <a href="http://localhost:81/IDAT/granjaazul/">
                     <img src="img/logo.avif" id="imglogo" alt="Logo">
                 </a>
             </section>
@@ -34,8 +37,25 @@
                 <li class="listamenu"><a href="delivery.php">DELIVERY</a></li>
                 <li class="listamenu"><a href="locales.php">LOCALES</a></li>
                 <li class="listamenu"><a href="contacto.php">CONTACTO</a></li>
+
+                <?php if (isset($_SESSION['rol']) && $_SESSION['rol'] === 'admin'): ?>
+                    <li class="listamenu"><a href="admin_cartas.php" class="nav-admin">⚙ EDITAR CARTAS</a></li>
+                    <li class="listamenu"><a href="logout.php" class="nav-logout">CERRAR SESIÓN</a></li>
+                <?php else: ?>
+                    <li class="listamenu"><a href="login.php" class="nav-admin">✏ EDITAR CARTAS</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
+
+    <style>
+        .nav-admin {
+            color: #c8a84b !important;
+        }
+        .nav-logout {
+            color: #aaa !important;
+            font-size: 12px !important;
+        }
+    </style>
 </body>
 </html>

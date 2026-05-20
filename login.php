@@ -1,7 +1,14 @@
 <?php
-session_start();
-require_once('db.php');
+if (session_status() === PHP_SESSION_NONE) session_start();
 
+// Si ya está logueado, redirigir directo
+if (isset($_SESSION['rol'])) {
+    if ($_SESSION['rol'] === 'admin') header('Location: admin_cartas.php');
+    else header('Location: cartas.php');
+    exit;
+}
+
+require_once('db.php');
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -17,7 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row = $result->fetch_assoc();
         $_SESSION['usuario'] = $row['usuario'];
         $_SESSION['rol']     = $row['rol'];
-        header('Location: cartas.php');
+        $stmt->close();
+
+        // Admin va al panel, user va a cartas
+        if ($row['rol'] === 'admin') header('Location: admin_cartas.php');
+        else header('Location: cartas.php');
         exit;
     } else {
         $error = 'Usuario o contraseña incorrectos.';
@@ -30,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/estiloencabezado.css">
     <title>Login - Granja Azul</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -47,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .login-box {
             background-color: #d1dce5;
             width: 400px;
-            padding: 60px 40px 40px;
+            padding: 70px 40px 40px;
             text-align: center;
             position: relative;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -63,17 +73,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         .login-box h2 {
             color: #00336c;
-            font-size: 20px;
+            font-size: 18px;
             font-family: sans-serif;
             letter-spacing: 2px;
-            margin-bottom: 30px;
+            margin-bottom: 8px;
             text-transform: uppercase;
+        }
+
+        .login-box p.subtitulo {
+            font-family: sans-serif;
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 25px;
         }
 
         .login-box input {
             width: 100%;
             padding: 12px 15px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border: 1px solid #aab8c4;
             background: #ffffff;
             font-size: 14px;
@@ -81,9 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             outline: none;
         }
 
-        .login-box input:focus {
-            border-color: #00336c;
-        }
+        .login-box input:focus { border-color: #00336c; }
 
         .btn-login {
             width: 100%;
@@ -98,8 +113,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-family: sans-serif;
             text-transform: uppercase;
             transition: background 0.3s;
+            margin-top: 5px;
         }
-
         .btn-login:hover { background-color: #00254d; }
 
         .error-msg {
@@ -109,6 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             margin-bottom: 15px;
             font-size: 13px;
             font-family: sans-serif;
+            border-left: 3px solid #c0392b;
         }
 
         .volver {
@@ -126,7 +142,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="login-wrap">
         <div class="login-box">
             <img src="img/logo.avif" alt="Granja Azul" class="logo-login">
-            <h2>Iniciar Sesión</h2>
+            <h2>Acceso Administrativo</h2>
+            <p class="subtitulo">Solo para gestión de cartas</p>
 
             <?php if ($error): ?>
                 <div class="error-msg"><?= htmlspecialchars($error) ?></div>
@@ -138,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit" class="btn-login">Ingresar</button>
             </form>
 
-            <a href="index.php" class="volver">← Volver al inicio</a>
+            <a href="cartas.php" class="volver">← Volver a Cartas</a>
         </div>
     </div>
 </body>
