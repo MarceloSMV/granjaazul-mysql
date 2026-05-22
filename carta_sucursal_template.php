@@ -1,17 +1,11 @@
 <?php
-// carta_sucursal_template.php
-// No se llama directamente. Lo incluyen cartasanisidro.php, cartasantaclara.php, cartaasia.php
-// Variable requerida antes de incluir: $sucursal_id (int), $titulo_pagina (string)
-
 session_start();
 require_once('db.php');
 include('encabezado.php');
 
-// Obtener nombre de sucursal
 $res = $conn->query("SELECT nombre FROM sucursales WHERE id = $sucursal_id");
 $sucursal = $res->fetch_assoc();
 
-// Obtener categorías que tienen platos en esta sucursal
 $sql = "
     SELECT c.id AS cat_id, c.nombre AS categoria,
            p.id, p.nombre, p.precio, p.imagen

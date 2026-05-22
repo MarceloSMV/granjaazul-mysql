@@ -15,7 +15,6 @@ body {
     text-align: center;
 }
 
-/* Botón Superior */
 .btn-azul-carta {
     display: inline-block;
     background-color: #00336c;
@@ -27,7 +26,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Flor y Título */
 .bloque-decorativo {
     margin: 40px 0;
 }

@@ -105,10 +105,10 @@ include('encabezado.php');
 
 <script>
     const swiper = new Swiper('.contenedor-galeria', {
-        slidesPerView: 5,       // imágenes a la vez
-        slidesPerGroup: 1,      // al avanzar
-        spaceBetween: 20,       // espacio 
-        loop: true,             // loop infinito 
+        slidesPerView: 5,
+        slidesPerGroup: 1,
+        spaceBetween: 20,
+        loop: true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',

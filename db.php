@@ -1,5 +1,4 @@
 <?php
-// db.php — Conexión a MySQL
 $host     = 'localhost';
 $dbname   = 'granja_azul';
 $user     = 'root';

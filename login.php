@@ -1,7 +1,6 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
 
-// Si ya está logueado, redirigir directo
 if (isset($_SESSION['rol'])) {
     if ($_SESSION['rol'] === 'admin') header('Location: admin_cartas.php');
     else header('Location: cartas.php');
@@ -26,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['rol']     = $row['rol'];
         $stmt->close();
 
-        // Admin va al panel, user va a cartas
         if ($row['rol'] === 'admin') header('Location: admin_cartas.php');
         else header('Location: cartas.php');
         exit;
